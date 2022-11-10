@@ -1,5 +1,7 @@
+using Data;
 using Logs;
 using NaughtyAttributes;
+using Network;
 using UI;
 using UnityEngine;
 
@@ -16,20 +18,32 @@ namespace Core
 
             BoxControllers.OnInit += InitUI;
             SceneManagers.Instance.Init();
+
+            SetKeys();
         }
 
         private void InitUI()
         {
-            Debug.Log("Init ui");
             BoxControllers.OnInit -= InitUI;
 
             UIManager.Instance.OnInitialize();
             UIManager.Instance.OnStart();
 
-            LogManager.Instance.Log("Init UI");
+            NetworkManager.FailedConnectionEvent += FailedConnection;
+        }
+
+        private void SetKeys()
+        {
+            PlayerPrefs.SetString(PrefsKeys.NamePlayer, "Player_" + Random.Range(0, 1000));
+            PlayerPrefs.SetString(PrefsKeys.ServerAddress, "127.0.0.1");
+
         }
 
         public void ConnectToLobby()
+        {
+        }
+
+        public void FailedConnection()
         {
 
         }

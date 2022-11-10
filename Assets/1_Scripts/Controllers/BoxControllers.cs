@@ -7,8 +7,7 @@ namespace Core
 {
     public class BoxControllers : MonoBehaviour
     {
-        public delegate void Initialize();
-        public static event Initialize OnInit;
+        public static event Action OnInit;
 
         private static Dictionary<Type, object> data = new Dictionary<Type, object>();
 

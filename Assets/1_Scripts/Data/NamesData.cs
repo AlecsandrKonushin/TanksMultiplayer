@@ -1,8 +1,8 @@
 namespace Core
 {
-    public static class NamesData
+    public class NamesData
     {
-        public static string OBJECTS { get => "[OBJECTS]"; }
-        public static string COROUTINES_NAME { get => "[COROUTINES]"; }
+        public const string OBJECTS = "[OBJECTS]";
+        public const string COROUTINES_NAME = "[COROUTINES]";
     }
 }
