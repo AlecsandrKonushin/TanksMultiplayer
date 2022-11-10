@@ -135,8 +135,9 @@ GameObject:
   - component: {fileID: 54716872}
   - component: {fileID: 54716871}
   - component: {fileID: 54716870}
+  - component: {fileID: 54716873}
   m_Layer: 5
-  m_Name: StartButton
+  m_Name: ConnectToLobbyButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -160,7 +161,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 250, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &54716870
 MonoBehaviour:
@@ -244,6 +245,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 54716868}
   m_CullTransparentMesh: 1
+--- !u!114 &54716873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54716868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e62f615df8a6cf4a88414e654b8af6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &76567193
 GameObject:
   m_ObjectHideFlags: 0
@@ -760,7 +773,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &393552749
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1640,19 +1653,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 3bf3119882bcf404581586dc02eeb5ab, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
-    m_MaxSize: 40
+    m_MaxSize: 30
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Start
+  m_Text: Connect
 --- !u!222 &2008131690
 CanvasRenderer:
   m_ObjectHideFlags: 0

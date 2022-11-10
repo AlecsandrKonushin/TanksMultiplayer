@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Core
 {
-    public class BaseManager : ScriptableObject, IManager
+    public class BaseController : ScriptableObject, IController
     {
         public virtual void OnInitialize() { }
 

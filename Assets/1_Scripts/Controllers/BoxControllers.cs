@@ -2,47 +2,46 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace Core
 {
-    public class BoxManager : MonoBehaviour
+    public class BoxControllers : MonoBehaviour
     {
         public delegate void Initialize();
         public static event Initialize OnInit;
 
         private static Dictionary<Type, object> data = new Dictionary<Type, object>();
 
-        private static BaseManager[] managers;
+        private static BaseController[] controllers;
 
         public static object GetMan { get; internal set; }
 
         #region INIT
 
-        public static void Init(BaseManager[] managers)
+        public static void Init(BaseController[] controllers)
         {
             data.Clear();
 
-            BoxManager.managers = managers;
+            BoxControllers.controllers = controllers;
 
             Coroutines.StartRoutine(InitGameRoutine());
         }
 
         private static IEnumerator InitGameRoutine()
         {
-            CreateManagers();
+            CreateControllers();
             yield return null;
 
-            InitManagers();
+            InitControllers();
             yield return null;
 
-            StartManagers();
+            StartControllers();
             yield return null;
         }
 
-        private static void CreateManagers()
+        private static void CreateControllers()
         {
-            foreach (var manager in managers)
+            foreach (var manager in controllers)
             {
                 var add = Instantiate(manager);
 
@@ -50,19 +49,19 @@ namespace Core
             }
         }
 
-        private static void InitManagers()
+        private static void InitControllers()
         {
             foreach (var manager in data.Values)
             {
-                (manager as BaseManager).OnInitialize();
+                (manager as BaseController).OnInitialize();
             }
         }
 
-        private static void StartManagers()
+        private static void StartControllers()
         {
             foreach (var manager in data.Values)
             {
-                (manager as BaseManager).OnStart();
+                (manager as BaseController).OnStart();
             }
         }
 

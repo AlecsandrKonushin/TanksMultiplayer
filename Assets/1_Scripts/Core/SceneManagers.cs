@@ -5,11 +5,11 @@ namespace Core
 {
     public class SceneManagers : Singleton<SceneManagers>
     {
-        [SerializeField] private BaseManager[] managers;
+        [SerializeField] private BaseController[] managers;
 
         public void Init()
         { 
-            BoxManager.Init(managers);
+            BoxControllers.Init(managers);
         }
     }
 }

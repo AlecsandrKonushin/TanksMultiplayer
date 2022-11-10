@@ -1,6 +1,5 @@
 using Logs;
 using NaughtyAttributes;
-using System.Collections;
 using UI;
 using UnityEngine;
 
@@ -15,19 +14,24 @@ namespace Core
         {
             LogManager.Instance.SetIsNeedLog = isNeedLog;
 
-            BoxManager.OnInit += InitUI;
+            BoxControllers.OnInit += InitUI;
             SceneManagers.Instance.Init();
         }
 
         private void InitUI()
         {
             Debug.Log("Init ui");
-            BoxManager.OnInit -= InitUI;
+            BoxControllers.OnInit -= InitUI;
 
             UIManager.Instance.OnInitialize();
             UIManager.Instance.OnStart();
 
             LogManager.Instance.Log("Init UI");
+        }
+
+        public void ConnectToLobby()
+        {
+
         }
     }
 }
