@@ -1,3 +1,5 @@
+using Core;
+
 namespace Data
 {
     public class PrefsKeys
@@ -5,5 +7,7 @@ namespace Data
         public const string NamePlayer = "NamePlayer";
 
         public const string ServerAddress = "ServerAdress";
+
+        public const string GameMode = "GameMode";
     }
 }

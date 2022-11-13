@@ -36,11 +36,12 @@ namespace Core
         {
             PlayerPrefs.SetString(PrefsKeys.NamePlayer, "Player_" + Random.Range(0, 1000));
             PlayerPrefs.SetString(PrefsKeys.ServerAddress, "127.0.0.1");
-
+            PlayerPrefs.SetInt(PrefsKeys.GameMode, 0);
         }
 
         public void ConnectToLobby()
         {
+            NetworkManager.StartMatch(NetworkMode.Online);
         }
 
         public void FailedConnection()

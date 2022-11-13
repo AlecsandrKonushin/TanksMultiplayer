@@ -6,4 +6,10 @@ namespace Core
     public class GameController : BaseController
     {
     }
+
+    public enum GameMode
+    {
+        DeathMatch,
+        CaptureFlag
+    }
 }

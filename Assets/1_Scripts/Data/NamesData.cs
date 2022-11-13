@@ -4,5 +4,6 @@ namespace Core
     {
         public const string OBJECTS = "[OBJECTS]";
         public const string COROUTINES_NAME = "[COROUTINES]";
+        public const string MODE = "mode";
     }
 }
