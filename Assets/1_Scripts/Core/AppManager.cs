@@ -17,7 +17,7 @@ namespace Core
             LogManager.Instance.SetIsNeedLog = isNeedLog;
 
             BoxControllers.OnInit += InitUI;
-            SceneManagers.Instance.Init();
+            ScenesManager.Instance.Init();
 
             SetKeys();
         }

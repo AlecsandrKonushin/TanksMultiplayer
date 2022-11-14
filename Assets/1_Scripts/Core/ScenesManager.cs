@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Core
 {
-    public class SceneManagers : Singleton<SceneManagers>
+    public class ScenesManager : Singleton<ScenesManager>
     {
         [SerializeField] private BaseController[] managers;
 

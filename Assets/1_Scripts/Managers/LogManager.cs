@@ -1,4 +1,3 @@
-using UI;
 using UnityEngine;
 
 namespace Logs
@@ -17,23 +16,23 @@ namespace Logs
             }
         }
 
-        public void Log(string message)
+        public static void Log(string message)
         {
-            if (isNeedLog)
+            if (Instance.isNeedLog)
             {
                 Debug.Log(message);
 
-                logWindow.Log(message);
+                Instance.logWindow.Log(message);
             }
         }
 
-        public void LogError(string error)
+        public static void LogError(string error)
         {
-            if (isNeedLog)
+            if (Instance.isNeedLog)
             {
                 Debug.Log($"<color=red>{error}</color>");
 
-                logWindow.LogError(error);
+                Instance.logWindow.LogError(error);
             }
         }
     }
