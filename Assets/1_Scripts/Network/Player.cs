@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,10 +9,10 @@ namespace Characters
 {
     public class Player : MonoBehaviourPunCallbacks, IPunObservable
     {
+        [BoxGroup("UI")]
         [SerializeField] private Text nameText;
+        [BoxGroup("UI")]
         [SerializeField] private Slider healthSlider, shieldSlider;
-
-
 
         private int maxHealth = 10;
         private short turrentRotation;
